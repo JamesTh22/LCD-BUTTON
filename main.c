@@ -21,13 +21,16 @@ void main(void) {
 
     while (1) {
         if (isPressedFalling_RC6()) { // OK button
+            lcd_clear();
             lcd_puts_at(0, 0, "hello world");
             lcd_puts_at(0, 1, "06:45 ALM 07:00");
         }
         if (isPressedFalling_RC7()) { // UP button
+            lcd_clear();
             lcd_puts_at(0, 0, "pizza");
         }
         if (isPressedFalling_RC5()) { // DOWN button
+            lcd_clear();
             lcd_puts_at(0, 0, "burger");
         }
     }
