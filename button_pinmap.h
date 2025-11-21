@@ -11,9 +11,9 @@ static inline void buttons_ports_init(void) {
     TRISCbits.TRISC7 = 1; // RC7 input
     TRISCbits.TRISC6 = 1; // RC6 input
     TRISCbits.TRISC5 = 1; // RC5 input
-    // Enable weak pull-ups for Port C
-    WPUB = 0x00; // Disable Port B pull-ups (not needed)
-    INTCON2bits.RBPU = 0; // Enable weak pull-ups globally
+    // Enable weak pull-ups for Port C pins
+    INTCON2bits.RBPU = 0; // Enable weak pull-ups globally (0 = enabled)
+    WPUC |= ((1u<<7) | (1u<<6) | (1u<<5)); // Enable pull-ups on RC7, RC6, RC5
 }
 #endif
 
