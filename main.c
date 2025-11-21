@@ -20,14 +20,14 @@ void main(void) {
     lcd_puts_at(0, 0, "Ready");
 
     while (1) {
-        if (isPressedFalling_RE2()) { // OK button
+        if (isPressedFalling_RC6()) { // OK button
             lcd_puts_at(0, 0, "hello world");
             lcd_puts_at(0, 1, "06:45 ALM 07:00");
         }
-        if (isPressedFalling_RE0()) { // UP button
+        if (isPressedFalling_RC7()) { // UP button
             lcd_puts_at(0, 0, "pizza");
         }
-        if (isPressedFalling_RE3()) { // DOWN button
+        if (isPressedFalling_RC5()) { // DOWN button
             lcd_puts_at(0, 0, "burger");
         }
     }

@@ -5,7 +5,7 @@
 #define _XTAL_FREQ 20000000UL
 #define DEBOUNCE_MS 30
 
-uint8_t isPressedFalling_RE0(void) {
+uint8_t isPressedFalling_RC7(void) {
     static uint8_t prev = 1;
     uint8_t cur = BUTTON_UP;
     if (prev == 1 && cur == 0) {
@@ -16,7 +16,7 @@ uint8_t isPressedFalling_RE0(void) {
     return 0;
 }
 
-uint8_t isPressedFalling_RE2(void) {
+uint8_t isPressedFalling_RC6(void) {
     static uint8_t prev = 1;
     uint8_t cur = BUTTON_OK;
     if (prev == 1 && cur == 0) {
@@ -27,7 +27,7 @@ uint8_t isPressedFalling_RE2(void) {
     return 0;
 }
 
-uint8_t isPressedFalling_RE3(void) {
+uint8_t isPressedFalling_RC5(void) {
     static uint8_t prev = 1;
     uint8_t cur = BUTTON_DOWN;
     if (prev == 1 && cur == 0) {

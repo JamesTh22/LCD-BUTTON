@@ -9,8 +9,8 @@ uint8_t button_pressed(uint8_t id);
 uint8_t button_down(uint8_t id);
 
 // Debounced helpers
-uint8_t isPressedFalling_RE(void);
-uint8_t isPressedFalling_RE2(void);
-uint8_t isPressedFalling_RE3(void);
+uint8_t isPressedFalling_RC7(void);
+uint8_t isPressedFalling_RC6(void);
+uint8_t isPressedFalling_RC5(void);
 
 #endif

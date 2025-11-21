@@ -2,17 +2,18 @@
 #define BUTTON_PINMAP_H
 #include <xc.h>
 
-#define BUTTON_UP    PORTEbits.RE0
-#define BUTTON_OK    PORTEbits.RE2
-#define BUTTON_DOWN  PORTEbits.RE3
+#define BUTTON_UP    PORTCbits.RC7
+#define BUTTON_OK    PORTCbits.RC6
+#define BUTTON_DOWN  PORTCbits.RC5
 
 static inline void buttons_ports_init(void) {
-    ANSELE &= ~((1u<<0) | (1u<<2) | (1u<<3)); // Digital mode for RE0, RE2, RE3
-    TRISEbits.TRISE0 = 1; // RE0 input
-    TRISEbits.TRISE2 = 1; // RE2 input
-    TRISEbits.TRISE3 = 1; // RE3 input
-    // PORTE does NOT have internal weak pull-ups on PIC18F45K22
-    // So you need external resistors or handle active-high logic
+    ANSELC &= ~((1u<<7) | (1u<<6) | (1u<<5)); // Digital mode for RC7, RC6, RC5
+    TRISCbits.TRISC7 = 1; // RC7 input
+    TRISCbits.TRISC6 = 1; // RC6 input
+    TRISCbits.TRISC5 = 1; // RC5 input
+    // Enable weak pull-ups for Port C
+    WPUB = 0x00; // Disable Port B pull-ups (not needed)
+    INTCON2bits.RBPU = 0; // Enable weak pull-ups globally
 }
 #endif
 
